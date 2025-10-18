@@ -1,224 +1,157 @@
-/* === Estilo general === */
+/* ======= ESTILOS GENERALES ======= */
 body {
   font-family: 'Montserrat', sans-serif;
+  background-color: #FFE1AF; /* fondo suave */
+  color: #4A403A;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f9;
-  color: #333;
 }
 
-/* === Header === */
+/* ======= HEADER ======= */
 header {
-  background-color: #1a1a40;
+  background-color: #B77466; /* tono rojizo cálido */
   color: white;
   text-align: center;
-  padding: 20px 0;
+  padding: 30px 0;
 }
 
 header img {
-  display: block;
-  margin: 0 auto 10px;
+  width: 100px;
+  border-radius: 8px;
 }
 
-/* === Footer === */
-footer {
-  background-color: #1a1a40;
-  color: white;
-  text-align: center;
-  padding: 15px 0;
-  margin-top: 40px;
+/* ======= NAV ======= */
+nav {
+  background-color: #E2B59A; /* color intermedio */
+  padding: 10px 0;
 }
 
-/* === Navegación === */
-.nav-list {
+nav ul {
   list-style: none;
-  background-color: #34495e;
-  margin: 0;
-  padding: 10px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-list li a {
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: #4A403A;
   text-decoration: none;
-  color: white;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: 0.3s;
 }
 
-.nav-list li a:hover {
-  color: #f1c40f;
+nav a:hover {
+  color: #B77466;
 }
 
-/* === Secciones === */
+/* ======= SECCIONES ======= */
 main {
-  padding: 20px;
+  padding: 40px;
   text-align: center;
 }
 
 section {
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 
-/* === Productos === */
+/* ======= BOTONES ======= */
+button {
+  background-color: #957C62;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #B77466;
+}
+
+/* ======= TARJETAS DE PRODUCTOS ======= */
 .productos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  margin: 40px auto;
 }
 
-.tarjeta {
-  background-color: white;
+.productos article {
+  background-color: #E2B59A;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 250px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
   padding: 15px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px;
+  transition: transform 0.3s ease;
 }
 
-.tarjeta:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.productos article:hover {
+  transform: translateY(-5px);
 }
 
-.tarjeta img {
+.productos img {
   width: 100%;
-  border-radius: 10px;
-}
-
-.precio {
-  display: block;
-  font-weight: bold;
-  font-size: 18px;
-  color: #1a1a40;
-  margin: 10px 0;
-}
-
-.btn-agregar {
-  background-color: #1a1a40;
-  color: white;
-  border: none;
-  padding: 10px 15px;
   border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.btn-agregar:hover {
-  background-color: #f1c40f;
-  color: #1a1a40;
-}
-
-/* === Reseñas (Grid) === */
+/* ======= RESEÑAS ======= */
 .reseñas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
-  background-color: #f9f9fb;
-  text-align: center;
 }
 
-.reseñas h3 {
-  grid-column: 1 / -1;
-  color: #1a1a40;
-}
-
-.card {
-  background-color: white;
+.reseñas .card {
+  background-color: #FFE1AF;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card:hover {
+.reseñas .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.card img {
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-
-/* === Formulario de contacto === */
-#contacto form {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
+/* ======= FORMULARIO DE CONTACTO ======= */
+form {
   max-width: 400px;
   margin: 0 auto;
+  background-color: #E2B59A;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-#contacto input,
-#contacto textarea {
+input, textarea {
   width: 100%;
+  margin-bottom: 10px;
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #957C62;
+  border-radius: 5px;
+  font-family: inherit;
 }
 
-#contacto input:focus,
-#contacto textarea:focus {
-  border-color: #1a1a40;
-  box-shadow: 0 0 5px rgba(26, 26, 64, 0.4);
+input:focus, textarea:focus {
   outline: none;
+  border-color: #B77466;
+  transition: 0.3s;
 }
 
-#contacto button {
-  background-color: #1a1a40;
+/* ======= FOOTER ======= */
+footer {
+  background-color: #957C62;
   color: white;
-  border: none;
-  padding: 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-#contacto button:hover {
-  background-color: #f1c40f;
-  color: #1a1a40;
-}
-
-/* === Íconos sociales === */
-.social-icons {
-  margin-top: 10px;
-}
-
-.social-icons a {
-  color: white;
-  margin: 0 10px;
-  font-size: 24px;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #f1c40f;
-}
-
-/* === Adaptación móvil === */
-@media (max-width: 768px) {
-  .reseñas {
-    grid-template-columns: 1fr;
-  }
-
-  #contacto form {
-    padding: 15px;
-  }
-
-  #contacto input,
-  #contacto textarea {
-    width: 100%;
-  }
-
-  #contacto button {
-    width: 100%;
-  }
+  text-align: center;
+  padding: 20px 0;
+  font-size: 14px;
 }
