@@ -102,25 +102,51 @@ button:hover {
 }
 
 /* ======= RESEÑAS ======= */
+/* 🔸 Contenedor general de reseñas */
 .reseñas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  display: flex;                 /* usamos flexbox para centrar más fácil */
+  flex-wrap: wrap;               /* permite que las tarjetas bajen si no entran */
+  justify-content: center;       /* centra horizontalmente */
+  align-items: flex-start;       /* alinea desde arriba */
+  gap: 20px;                     /* espacio entre tarjetas */
+  padding: 40px;
 }
 
-.reseñas .card {
-  background-color: #FFE1AF;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* 🔸 Título de reseñas */
+.reseñas h3 {
+  width: 100%;                   /* ocupa todo el ancho */
+  text-align: center;            /* centra el texto */
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  color: #5c4033;
 }
 
-.reseñas .card:hover {
+/* 🔸 Tarjetas individuales */
+.card {
+  background-color: #ffe1af;       /* fondo suave */
+  border: 2px solid #e2b59a;       /* borde sutil */
+  border-radius: 10px;             /* esquinas redondeadas */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra ligera */
+  padding: 20px;
+  text-align: center;
+  width: 250px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* 🔸 Efecto al pasar el mouse */
+.card:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
+
+/* 🔸 Imagen o ícono dentro de la tarjeta */
+.card img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+
 
 /* ======= FORMULARIO DE CONTACTO ======= */
 form {
