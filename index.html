@@ -99,16 +99,23 @@
 
     <!-- Sección de contacto -->
     <section id="contacto">
-      <h3>Formulario de Contacto</h3>
-      <form action="https://formspree.io/f/xrbydggy" method="POST">
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-        <input type="email" id="email" name="email" placeholder="Tu correo" required>
-        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-    </section>
+    <h3>Contacto</h3>
+    <p>Dejanos tu mensaje y te responderemos a la brevedad:</p>
 
-  </main>
+    <form action="https://formspree.io/f/xrbydggy" method="POST">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" required>
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="mensaje">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+</main>
 
   <!-- Pie de página -->
   <footer>
