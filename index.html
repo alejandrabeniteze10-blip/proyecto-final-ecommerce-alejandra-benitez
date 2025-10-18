@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Librería El Saber</title>
+
+  <!-- Fuente de Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <!-- Íconos de Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Estilos CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Encabezado -->
+  <header>
+    <img src="logo.png" alt="Logo de Librería El Saber" width="120" />
+    <h1>Librería El Saber</h1>
+    <h2>Tu portal de lectura online</h2>
+  </header>
+
+  <!-- Barra de navegación -->
+  <nav>
+    <ul class="nav-list">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#productos">Productos</a></li>
+      <li><a href="#reseñas">Reseñas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main>
+
+    <!-- Sección de bienvenida -->
+    <section id="inicio">
+      <h3>Bienvenido a nuestra librería</h3>
+      <p>
+        Descubrí los <strong>mejores títulos</strong> en literatura, ciencia y fantasía.  
+        <em>Leer</em> es la mejor forma de viajar sin moverte de casa.
+      </p>
+      <img src="libros.png" alt="Imagen de una pila de libros" width="300" />
+    </section>
+
+    <!-- Sección de productos -->
+    <section id="productos" class="productos">
+      <article class="tarjeta">
+        <img src="libro1.jpg" alt="El Principito">
+        <h3>El Principito</h3>
+        <p>Una historia mágica sobre la amistad y el valor de los sueños.</p>
+        <span class="precio">$4.500</span>
+        <button class="btn-agregar"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+      </article>
+
+      <article class="tarjeta">
+        <img src="libro2.jpg" alt="Cien años de soledad">
+        <h3>Cien Años de Soledad</h3>
+        <p>El realismo mágico de Gabriel García Márquez en su máxima expresión.</p>
+        <span class="precio">$6.800</span>
+        <button class="btn-agregar"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+      </article>
+
+      <article class="tarjeta">
+        <img src="libro3.jpg" alt="1984">
+        <h3>1984</h3>
+        <p>Una novela distópica que reflexiona sobre la libertad y el control.</p>
+        <span class="precio">$5.200</span>
+        <button class="btn-agregar"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
+      </article>
+    </section>
+
+    <!-- Sección de reseñas -->
+    <section id="reseñas" class="reseñas">
+      <h3>Reseñas de nuestros lectores</h3>
+
+      <section class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922561.png" alt="Usuario 1" width="80">
+        <h4>María Fernández</h4>
+        <p>"Excelente atención y gran variedad de libros. ¡Siempre encuentro algo nuevo!"</p>
+      </section>
+
+      <section class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922656.png" alt="Usuario 2" width="80">
+        <h4>Carlos López</h4>
+        <p>"La entrega fue muy rápida y el libro llegó en perfecto estado. Recomendadísimo."</p>
+      </section>
+
+      <section class="card">
+        <img src="https://cdn-icons-png.flaticon.com/512/2922/2922510.png" alt="Usuario 3" width="80">
+        <h4>Lucía Martínez</h4>
+        <p>"El sitio es muy fácil de usar y los precios son justos. ¡Volveré a comprar!"</p>
+      </section>
+    </section>
+
+    <!-- Sección de contacto -->
+    <section id="contacto">
+      <h3>Formulario de Contacto</h3>
+      <form action="https://formspree.io/f/tu-endpoint" method="POST">
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        <input type="email" id="email" name="email" placeholder="Tu correo" required>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Tu mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>Contacto: <strong>contacto@elsaber.com</strong></p>
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <p>© 2025 Librería El Saber</p>
+  </footer>
+
+</body>
+</html>
