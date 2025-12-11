@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "El Principito",
+    "price": 4500,
+    "description": "Una historia mágica sobre la amistad, la infancia y el valor de los sueños.",
+    "image": "libro1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Cien años de soledad",
+    "price": 6800,
+    "description": "El realismo mágico de Gabriel García Márquez en su máxima expresión, siguiendo a la familia Buendía.",
+    "image": "libro2.jpg"
+  },
+  {
+    "id": 3,
+    "title": "1984",
+    "price": 5200,
+    "description": "Una novela distópica que reflexiona sobre la libertad, el control y la vigilancia totalitaria.",
+    "image": "libro3.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Fahrenheit 451",
+    "price": 5100,
+    "description": "Clásico de la ciencia ficción sobre un futuro donde los libros están prohibidos y los bomberos los queman.",
+    "image": "libro4.jpg"
+  },
+  {
+    "id": 5,
+    "title": "La sombra del viento",
+    "price": 7300,
+    "description": "Una novela de misterio y amor ambientada en la Barcelona de posguerra, ideal para amantes de los libros.",
+    "image": "libro5.jpg"
+  },
+  {
+    "id": 6,
+    "title": "El nombre del viento",
+    "price": 8200,
+    "description": "La historia de Kvothe, un mago legendario, narrada en primera persona en un mundo de fantasía épica.",
+    "image": "libro6.jpg"
+  }
+]

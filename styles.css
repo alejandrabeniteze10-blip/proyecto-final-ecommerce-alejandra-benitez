@@ -9,7 +9,8 @@ body {
 
 /* ======= HEADER ======= */
 header {
-  background-color: #B77466; /* tono rojizo cálido */
+  position: relative;            /* necesario para posicionar el carrito a la derecha */
+  background-color: #B77466;     /* tono rojizo cálido */
   color: white;
   text-align: center;
   padding: 30px 0;
@@ -18,6 +19,36 @@ header {
 header img {
   width: 100px;
   border-radius: 8px;
+}
+
+/* ---- Carrito en el header (derecha, negro) ---- */
+.carrito-header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.carrito-header a {
+  color: black;                  /* texto negro */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #FFE1AF;
+  padding: 6px 10px;
+  border-radius: 20px;
+}
+
+.carrito-header i {
+  font-size: 18px;
+}
+
+.carrito-header a:hover {
+  color: #333;
+  transform: scale(1.03);
+  transition: 0.2s ease;
 }
 
 /* ======= NAV ======= */
@@ -77,10 +108,10 @@ button:hover {
 
 /* ======= TARJETAS DE PRODUCTOS ======= */
 .productos {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
+  justify-items: center;
 }
 
 .productos article {
@@ -102,65 +133,67 @@ button:hover {
 }
 
 /* ======= RESEÑAS ======= */
-/* 🔸 Contenedor general de reseñas */
 .reseñas {
-  display: flex;                 /* usamos flexbox para centrar más fácil */
-  flex-wrap: wrap;               /* permite que las tarjetas bajen si no entran */
-  justify-content: center;       /* centra horizontalmente */
-  align-items: flex-start;       /* alinea desde arriba */
-  gap: 20px;                     /* espacio entre tarjetas */
-  padding: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 20px;
 }
 
-/* 🔸 Título de reseñas */
 .reseñas h3 {
-  width: 100%;                   /* ocupa todo el ancho */
-  text-align: center;            /* centra el texto */
+  width: 100%;
+  text-align: center;
   margin-bottom: 20px;
   font-size: 1.6em;
   color: #5c4033;
 }
 
-/* 🔸 Tarjetas individuales */
 .card {
-  background-color: #ffe1af;       /* fondo suave */
-  border: 2px solid #e2b59a;       /* borde sutil */
-  border-radius: 10px;             /* esquinas redondeadas */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* sombra ligera */
+  background-color: #ffe1af;
+  border: 2px solid #e2b59a;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   padding: 20px;
   text-align: center;
-  width: 250px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 260px;
+  transition: 0.2s ease;
 }
 
-/* 🔸 Efecto al pasar el mouse */
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
-/* 🔸 Imagen o ícono dentro de la tarjeta */
 .card img {
   width: 80px;
   height: 80px;
   margin-bottom: 10px;
 }
 
-
-
 /* ======= FORMULARIO DE CONTACTO ======= */
 form {
-  max-width: 400px;
+  max-width: 450px;
   margin: 0 auto;
   background-color: #E2B59A;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 25px;
+  border-radius: 12px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Labels dentro del recuadro */
+form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #4A403A;
+  width: 100%;
 }
 
 input, textarea {
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #957C62;
   border-radius: 5px;
@@ -173,6 +206,48 @@ input:focus, textarea:focus {
   transition: 0.3s;
 }
 
+/* Mensaje de estado del formulario */
+#estado-formulario {
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+/* ======= CARRITO ======= */
+#carrito {
+  background-color: #E2B59A;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#carrito-items {
+  margin-top: 20px;
+}
+
+.carrito-item {
+  background-color: #d8a98b;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.carrito-detalle {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.carrito-item img {
+  width: 60px;
+  border-radius: 8px;
+}
+
+.carrito-controles button {
+  margin: 0 4px;
+}
+
 /* ======= FOOTER ======= */
 footer {
   background-color: #957C62;
@@ -180,4 +255,14 @@ footer {
   text-align: center;
   padding: 20px 0;
   font-size: 14px;
+}
+
+.social-icons a {
+  color: white;
+  margin: 0 5px;
+  font-size: 18px;
+}
+
+.social-icons a:hover {
+  color: #FFE1AF;
 }

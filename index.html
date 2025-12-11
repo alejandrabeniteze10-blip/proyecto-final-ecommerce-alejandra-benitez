@@ -5,13 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Librería El Saber</title>
 
-  <!-- Fuente de Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- SEO básico -->
+  <meta name="description" content="Librería El Saber - Tu portal de lectura online. Comprá libros de literatura, ciencia y fantasía con envíos rápidos.">
+  <meta name="keywords" content="librería online, libros, e-commerce, lectura, novelas, ciencia ficción, fantasía">
+  <meta name="author" content="Librería El Saber">
 
-  <!-- Íconos de Font Awesome -->
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Estilos CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -21,13 +26,20 @@
     <img src="logo.png" alt="Logo de Librería El Saber" width="120" />
     <h1>Librería El Saber</h1>
     <h2>Tu portal de lectura online</h2>
+
+    <!-- Carrito alineado a la derecha -->
+    <div class="carrito-header">
+      <a href="#carrito" aria-label="Ir al carrito de compras">
+        <i class="fas fa-shopping-cart" aria-hidden="true"></i>
+        Carrito de compras (<span id="carrito-count">0</span>)
+      </a>
+    </div>
   </header>
 
-  <!-- Barra de navegación -->
+  <!-- Navegación -->
   <nav>
     <ul class="nav-list">
       <li><a href="#inicio">Inicio</a></li>
-      <li><a href="#catalogo">Catálogo</a></li>
       <li><a href="#productos">Productos</a></li>
       <li><a href="#reseñas">Reseñas</a></li>
       <li><a href="#contacto">Contacto</a></li>
@@ -37,7 +49,7 @@
   <!-- Contenido principal -->
   <main>
 
-    <!-- Sección de bienvenida -->
+    <!-- Inicio -->
     <section id="inicio">
       <h3>Bienvenido a nuestra librería</h3>
       <p>
@@ -47,34 +59,12 @@
       <img src="libros.png" alt="Imagen de una pila de libros" width="300" />
     </section>
 
-    <!-- Sección de productos -->
+    <!-- Productos (se llena con JS desde productos.json) -->
     <section id="productos" class="productos">
-      <article class="tarjeta">
-        <img src="libro1.jpg" alt="El Principito">
-        <h3>El Principito</h3>
-        <p>Una historia mágica sobre la amistad y el valor de los sueños.</p>
-        <span class="precio">$4.500</span>
-        <button class="btn-agregar"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-      </article>
-
-      <article class="tarjeta">
-        <img src="libro2.jpg" alt="Cien años de soledad">
-        <h3>Cien Años de Soledad</h3>
-        <p>El realismo mágico de Gabriel García Márquez en su máxima expresión.</p>
-        <span class="precio">$6.800</span>
-        <button class="btn-agregar"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-      </article>
-
-      <article class="tarjeta">
-        <img src="libro3.jpg" alt="1984">
-        <h3>1984</h3>
-        <p>Una novela distópica que reflexiona sobre la libertad y el control.</p>
-        <span class="precio">$5.200</span>
-        <button class="btn-agregar"><i class="fas fa-cart-plus"></i> Agregar al carrito</button>
-      </article>
+      <!-- Las tarjetas se crean dinámicamente con JavaScript -->
     </section>
 
-    <!-- Sección de reseñas -->
+    <!-- Reseñas -->
     <section id="reseñas" class="reseñas">
       <h3>Reseñas de nuestros lectores</h3>
 
@@ -97,37 +87,54 @@
       </section>
     </section>
 
-    <!-- Sección de contacto -->
+    <!-- Contacto -->
     <section id="contacto">
-    <h3>Contacto</h3>
-    <p>Dejanos tu mensaje y te responderemos a la brevedad:</p>
+      <h3>Contacto</h3>
+      <p>Dejanos tu mensaje y te responderemos a la brevedad:</p>
 
-    <form action="https://formspree.io/f/xrbydggy" method="POST">
-      <label for="nombre">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" required>
+      <form id="contact-form" action="https://formspree.io/f/xrbydggy" method="POST">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
 
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required>
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" required>
 
-      <label for="mensaje">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="4" cols="50" required></textarea>
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
 
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
-</main>
+        <p id="estado-formulario"></p>
 
-  <!-- Pie de página -->
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+    <!-- Carrito -->
+    <section id="carrito">
+      <h3>Tu carrito</h3>
+      <div id="carrito-items">
+        <!-- JS inyecta los productos del carrito acá -->
+      </div>
+      <p>
+        <strong>Total:</strong>
+        $<span id="carrito-total">0</span>
+      </p>
+      <button id="carrito-vaciar">Vaciar carrito</button>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
   <footer>
     <p>Contacto: <strong>contacto@elsaber.com</strong></p>
     <div class="social-icons">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
     </div>
     <p>© 2025 Librería El Saber</p>
   </footer>
-<!-- Sección de reseñas agregada -->
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>
-
